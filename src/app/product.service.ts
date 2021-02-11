@@ -13,7 +13,7 @@ export class ProductService {
   constructor(private _http : Http) { }
 
   getAlbum(id : number){
-    return this._http.get(_albumUrl).map(
+    return this._http.get(this._albumUrl).map(
     (res : Response) => res.json());
 
     //map here changes the response we get into json
