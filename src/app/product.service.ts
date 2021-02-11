@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http'
-import { Response } from '@angular/http'
+import { Http, Response } from '@angular/http'
 import 'rxjs/add/operator/map'
 
 @Injectable(
@@ -8,13 +7,13 @@ import 'rxjs/add/operator/map'
 )
 export class ProductService {
 
-  _albumUrl : string = "../assets/album.json";
+  private _albumUrl =  "../assets/album.json";
 
   constructor(private _http : Http) { }
 
   getAlbum(id : number){
     return this._http.get(this._albumUrl).map(
-    (res : Response) => res.json());
+    (response) => response.json());
 
     //map here changes the response we get into json
   }
